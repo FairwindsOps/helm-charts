@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+  labels: {{ include "newrelic-infra.labels" . | indent 4 }}
+  name: newrelicifra-yml
+type: Opaque
+data:
+    newrelicinfra-yml: |
+      custom_attributes:
+        APP: {{ .Values.app }}
+        DATACENTER: {{ .Values.datcenter }}
+        DOMAIN_NAME: {{ .Values.domain_name }}
+        HOST_TYPE: {{ .Values.host_type }}
+        REGION: {{ .Values.region }}
+        STAGE: {{ .Values.stage }}
+      display_name: {{ .Values.display_name }}
