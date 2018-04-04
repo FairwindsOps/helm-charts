@@ -8,7 +8,7 @@ data:
     newrelicinfra-yml: |
       custom_attributes:
         APP: {{ .Values.app }}
-        DATACENTER: {{ .Values.datcenter }}
+        DATACENTER: {{ .Values.datacenter }}
         DOMAIN_NAME: {{ .Values.domain_name }}
         HOST_TYPE: {{ .Values.host_type }}
         REGION: {{ .Values.region }}
