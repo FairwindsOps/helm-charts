@@ -27,8 +27,7 @@ spec:
           imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           securityContext:
             privileged: true
-            #          command: [ "bash", "-c", "source /etc/kube-nr-infra/config && /usr/bin/newrelic-infra -config /etc/newrelic/newrelic-infra.yml" ]
-          command: [ "sleep", "1000" ]
+            command: [ "bash", "-c", "source /etc/kube-nr-infra/config && /usr/bin/newrelic-infra -config /etc/newrelic/newrelic-infra.yml" ]
           {{- if or (.Values.verboseLog) (.Values.logFile) }}
           env:
             {{- if .Values.verboseLog }}
