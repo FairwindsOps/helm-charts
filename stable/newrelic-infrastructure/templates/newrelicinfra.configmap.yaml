@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap 
 metadata:
   labels: {{ include "newrelic-infra.labels" . | indent 4 }}
-  name: newrelicifra-yml
+  name: newrelicinfra-yml
 type: Opaque
 data:
     newrelicinfra-yml: |
