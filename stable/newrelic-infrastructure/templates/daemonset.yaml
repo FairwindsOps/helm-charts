@@ -43,8 +43,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /etc/newrelic/
-            - name: test
-              mountPath: /tmp/
             - name: newrelic-config
               mountPath: /etc/kube-nr-infra
               readOnly: true
