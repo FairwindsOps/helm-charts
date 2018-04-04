@@ -65,9 +65,9 @@ spec:
             secretName: {{ template "newrelic-infra.fullname" . }}-config
         - name: config
           configMap:
-            name: newrelicinfra-yaml
+            name: newrelicinfra-yml
             items:
-            - key: newrelicinfra-yaml 
+            - key: newrelicinfra-yml 
               path: newrelic-infra.yml
         - name: dev
           hostPath:
