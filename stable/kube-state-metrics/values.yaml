@@ -10,6 +10,7 @@ service:
   type: ClusterIP
   nodePort: 0
   loadBalancerIP: ""
+  labels: {}
 rbac:
   # If true, create & use RBAC resources
   create: false
@@ -26,6 +27,9 @@ tolerations: []
 
 # Annotations to be added to the pod
 podAnnotations: {}
+
+# Additional lables to apply to pods
+podLabels: {}
 
 # Available collectors for kube-state-metrics. By default all available
 # collectors are enabled.
