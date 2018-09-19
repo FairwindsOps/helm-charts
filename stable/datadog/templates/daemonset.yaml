@@ -61,6 +61,8 @@ spec:
               secretKeyRef:
                 name: {{ template "datadog.apiSecretName" . }}
                 key: api-key
+          - name: DD_ETC_ROOT
+            value: {{ .Values.datadog.etc_root }}
           {{- if .Values.datadog.logLevel }}
           - name: DD_LOG_LEVEL
             value: {{ .Values.datadog.logLevel | quote }}
