@@ -104,6 +104,9 @@ datadog:
   ##
   logLevel: WARNING
 
+  ## Set configuration root in `/etc/`
+  etc_root: /etc/datadog-agent
+
   ## Un-comment this to make each node accept non-local statsd traffic.
   ## ref: https://github.com/DataDog/docker-dd-agent#environment-variables
   ##
@@ -159,6 +162,19 @@ datadog:
   ##
   # leaderLeaseDuration: 600
 
+  ## checks.d and conf.d additional configurations
+
+  ## Set the configMap volume mountPath per
+
+  ## conf.d
+
+  confdMountPath: /conf.d
+
+  ## checks.d
+
+  checksdMountPath: /checks.d
+
+  ## 
   ## Provide additional check configurations (static and Autodiscovery)
   ## Each key will become a file in /conf.d
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes

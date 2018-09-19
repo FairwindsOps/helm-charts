@@ -61,6 +61,8 @@ spec:
               secretKeyRef:
                 name: {{ template "datadog.apiSecretName" . }}
                 key: api-key
+          - name: DD_ETC_ROOT
+            value: {{ .Values.datadog.etc_root }}
           {{- if .Values.datadog.logLevel }}
           - name: DD_LOG_LEVEL
             value: {{ .Values.datadog.logLevel | quote }}
@@ -120,13 +122,13 @@ spec:
             readOnly: true
           {{- if (or (.Values.datadog.confd) (.Values.datadog.autoconf)) }}
           - name: confd
-            mountPath: /conf.d
+            mountPath: {{ .Values.datadog.confdMountPath }}
             readOnly: true
           {{- end }}
           {{- if .Values.datadog.checksd }}
           - name: checksd
-            mountPath: /checks.d
-            readOnly: true
+    mountPath: {{ .Values.datadog.checksdMountPath }}
+    readOnly: true
           {{- end }}
           {{- if .Values.datadog.logsEnabled }}
           - name: pointerdir
