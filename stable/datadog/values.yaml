@@ -159,6 +159,19 @@ datadog:
   ##
   # leaderLeaseDuration: 600
 
+  ## checks.d and conf.d additional configurations
+
+  ## Set the configMap volume mountPath per
+
+  ## conf.d
+
+  confdMountPath: /conf.d
+
+  ## checks.d
+
+  checksdMountPath: /checks.d
+
+  ## 
   ## Provide additional check configurations (static and Autodiscovery)
   ## Each key will become a file in /conf.d
   ## ref: https://github.com/DataDog/datadog-agent/tree/master/Dockerfiles/agent#optional-volumes

@@ -120,13 +120,13 @@ spec:
             readOnly: true
           {{- if (or (.Values.datadog.confd) (.Values.datadog.autoconf)) }}
           - name: confd
-            mountPath: /conf.d
+            mountPath: {{ .Values.datadog.confdMountPath }}
             readOnly: true
           {{- end }}
           {{- if .Values.datadog.checksd }}
           - name: checksd
-            mountPath: /checks.d
-            readOnly: true
+    mountPath: {{ .Values.datadog.checksdMountPath }}
+    readOnly: true
           {{- end }}
           {{- if .Values.datadog.logsEnabled }}
           - name: pointerdir
